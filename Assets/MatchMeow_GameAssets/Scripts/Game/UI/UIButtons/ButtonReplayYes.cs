@@ -1,20 +1,11 @@
 using Cysharp.Threading.Tasks;
 
-public class ButtonReplayYes : ButtonBase
+public class ButtonReplayYes : ButtonBaseReplay
 {
-    protected override async UniTask OnClickUniTask()
-    {
-        await base.OnClickUniTask();
-
-        DoWhenClicked();
-
-    }
-
-    private void DoWhenClicked()
+    protected override void DoWhenClicked()
     {
         UIManager.Instance.CloseUI<ReplayPopUpUI>();
-        GameManager.Instance.OnReloadGame();
-        // UIManager.Instance.GamePlayObjectCanvas.gameObject.SetActive(true);
+        base.DoWhenClicked();
     }
 }
 

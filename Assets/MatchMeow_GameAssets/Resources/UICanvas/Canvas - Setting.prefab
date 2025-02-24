@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3318815596779679318}
   - component: {fileID: 4531129752638387989}
   - component: {fileID: 1227754633772873404}
-  - component: {fileID: 1259453020589697724}
   m_Layer: 5
   m_Name: Button - Vibration
   m_TagString: Untagged
@@ -122,7 +121,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1259453020589697724}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ButtonBase, Assembly-CSharp
         m_MethodName: OnClickVoid
         m_Mode: 1
@@ -134,19 +133,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1259453020589697724
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3834140599942119}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 425cf916cc4d4a46a9bd99c801366177, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  starSpawnPoint: {fileID: 5304335311610230471}
 --- !u!1 &310721719319320692
 GameObject:
   m_ObjectHideFlags: 0
@@ -213,6 +199,81 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!1 &1148805912576236072
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5277950446767367417}
+  - component: {fileID: 3845023397343305777}
+  - component: {fileID: 5109190306027851914}
+  m_Layer: 5
+  m_Name: Image_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &5277950446767367417
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148805912576236072}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 251484074694360246}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -110, y: -159}
+  m_SizeDelta: {x: 150, y: 150}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &3845023397343305777
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148805912576236072}
+  m_CullTransparentMesh: 1
+--- !u!114 &5109190306027851914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148805912576236072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 885550e6dc5b8494489db0d705fabd15, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -309,7 +370,6 @@ GameObject:
   - component: {fileID: 4988778344108181263}
   - component: {fileID: 3125174971446196806}
   - component: {fileID: 4126754601354794986}
-  - component: {fileID: 6135559221028326834}
   m_Layer: 5
   m_Name: Button - Volume
   m_TagString: Untagged
@@ -419,7 +479,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6135559221028326834}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ButtonBase, Assembly-CSharp
         m_MethodName: OnClickVoid
         m_Mode: 1
@@ -431,19 +491,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &6135559221028326834
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2622602482208683807}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 425cf916cc4d4a46a9bd99c801366177, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  starSpawnPoint: {fileID: 6386809358332212261}
 --- !u!1 &3162909704306789933
 GameObject:
   m_ObjectHideFlags: 0
@@ -736,7 +783,7 @@ GameObject:
   - component: {fileID: 341307131606998183}
   - component: {fileID: 9078727962480821101}
   - component: {fileID: 8126706774675733850}
-  - component: {fileID: 7230536509833903589}
+  - component: {fileID: 3177681985779430506}
   m_Layer: 5
   m_Name: Button - X
   m_TagString: Untagged
@@ -845,7 +892,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7230536509833903589}
+      - m_Target: {fileID: 3177681985779430506}
         m_TargetAssemblyTypeName: ButtonBase, Assembly-CSharp
         m_MethodName: OnClickVoid
         m_Mode: 1
@@ -857,7 +904,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &7230536509833903589
+--- !u!114 &3177681985779430506
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -866,7 +913,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6854992643351927198}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 425cf916cc4d4a46a9bd99c801366177, type: 3}
+  m_Script: {fileID: 11500000, guid: 86aaf1844d6849b581cba940edd41025, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   starSpawnPoint: {fileID: 7158340846718749435}
@@ -905,6 +952,7 @@ RectTransform:
   - {fileID: 6386809358332212261}
   - {fileID: 5304335311610230471}
   - {fileID: 7158454242899739700}
+  - {fileID: 5277950446767367417}
   m_Father: {fileID: 8449277098908776592}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}

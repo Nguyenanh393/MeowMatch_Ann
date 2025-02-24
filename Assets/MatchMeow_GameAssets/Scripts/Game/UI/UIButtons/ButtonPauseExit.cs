@@ -1,19 +1,10 @@
 using Cysharp.Threading.Tasks;
 
-public class ButtonPauseExit : ButtonBase
+public class ButtonPauseExit : ButtonBaseExit
 {
-    protected override async UniTask OnClickUniTask()
-    {
-        await base.OnClickUniTask();
-
-        DoWhenClicked();
-
-    }
-
-    private void DoWhenClicked()
+    protected override void DoWhenClicked()
     {
         UIManager.Instance.CloseUI<PausePopUpUI>();
-        UIManager.Instance.GamePlayObject.SetActive(true);
-        UIManager.Instance.GetUI<GamePlayUI>().CountDownText.ResumeCountdown();
+        base.DoWhenClicked();
     }
 }
