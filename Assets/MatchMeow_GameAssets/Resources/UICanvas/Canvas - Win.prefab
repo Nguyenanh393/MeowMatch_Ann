@@ -664,7 +664,7 @@ GameObject:
   - component: {fileID: 7902495665812456465}
   - component: {fileID: 7012549430783840131}
   - component: {fileID: 2904282215014710301}
-  - component: {fileID: 530445746408424871}
+  - component: {fileID: 5451523142818608530}
   m_Layer: 5
   m_Name: Button - Home
   m_TagString: Untagged
@@ -773,7 +773,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 530445746408424871}
+      - m_Target: {fileID: 5451523142818608530}
         m_TargetAssemblyTypeName: ButtonBase, Assembly-CSharp
         m_MethodName: OnClickVoid
         m_Mode: 1
@@ -785,7 +785,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &530445746408424871
+--- !u!114 &5451523142818608530
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -794,7 +794,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7863376643990834577}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 907afb7cf17145ed95e35f9b0b58bc63, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f6c5ab1b9ae4f868aa57718fbc9d443, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   starSpawnPoint: {fileID: 7717961995076472225}

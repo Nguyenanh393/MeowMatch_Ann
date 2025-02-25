@@ -33,9 +33,7 @@ public class GameManager : Singleton<GameManager>
         //userData?.OnInitData();
 
         // ChangeState(GameState.MainMenu);
-
-        UIManager.Instance.OpenUI<MainMenuUI>();
-    }
+     }
 
     // public static void ChangeState(GameState state)
     // {
@@ -52,6 +50,10 @@ public class GameManager : Singleton<GameManager>
     //     get => isPause;
     //     set => isPause = value;
     // }
+    private void Start()
+    {
+        UIManager.Instance.OpenUI<MainMenuUI>();
+    }
 
     public async UniTaskVoid OnWinState()
     {
