@@ -5,6 +5,7 @@ using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 using Object = UnityEngine.Object;
 
 public class GamePlayUI : UICanvas
@@ -12,6 +13,8 @@ public class GamePlayUI : UICanvas
     [SerializeField] private Transform topBarCanvas;
     [SerializeField] private Transform gamePlayObject;
     [SerializeField] private CountDownText countDownText;
+    [SerializeField] private Text levelText;
+
     private Vector3 _topBarPosition;
     private Vector3 _gamePlayObjectCanvasPos;
     private bool _canSetTimer;
@@ -27,16 +30,17 @@ public class GamePlayUI : UICanvas
 
     private void OnEnable()
     {
+        SetLevelText();
         MakeObjectMoveIn().Forget();
     }
 
-    private void Update()
-    {
-        if (_canSetTimer)
-        {
-
-        }
-    }
+    // private void Update()
+    // {
+    //     if (_canSetTimer)
+    //     {
+    //
+    //     }
+    // }
 
     // private void OnDisable()
     // {
@@ -61,7 +65,14 @@ public class GamePlayUI : UICanvas
         await UniTask.WhenAll(tasks);
 
         _canSetTimer = true;
+    }
 
+    private void SetLevelText()
+    {
+        int currentLevel = LevelManager.Instance.CurrentLevelId;
+        string currentlevelText = "Level " + currentLevel.ToString();
+
+        levelText.text = currentlevelText;
     }
 }
 

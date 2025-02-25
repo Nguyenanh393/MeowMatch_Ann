@@ -185,7 +185,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6.081081
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -318,8 +318,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1950178140}
+  m_Children: []
   m_Father: {fileID: 524978297}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &209087669
@@ -688,6 +687,7 @@ Transform:
   - {fileID: 923897212}
   - {fileID: 518413852}
   - {fileID: 176605762}
+  - {fileID: 1950178140}
   m_Father: {fileID: 1907035811}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &600054316
@@ -1096,10 +1096,10 @@ RectTransform:
   - {fileID: 476668956}
   m_Father: {fileID: 1922430742}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &923897211
 GameObject:
@@ -1908,7 +1908,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 176605762}
+  m_Father: {fileID: 524978297}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2088266379
 GameObject:
@@ -2003,28 +2003,28 @@ MonoBehaviour:
   Pool:
   - root: {fileID: 871370396}
     prefab: {fileID: 7559517404565842197, guid: c305f2ff5e644bb42b8d41f3ef85f692, type: 3}
-    amount: 0
-    collect: 0
+    amount: 3
+    collect: 1
   - root: {fileID: 518413852}
     prefab: {fileID: 8436019562533173051, guid: ce8a3173f12de3c4fb55d887cea4bfcc, type: 3}
-    amount: 0
-    collect: 0
-  - root: {fileID: 1950178140}
-    prefab: {fileID: 8406463535230042339, guid: 26281275eccacac43a36019469807070, type: 3}
-    amount: 0
-    collect: 0
+    amount: 3
+    collect: 1
   - root: {fileID: 176605762}
     prefab: {fileID: 2268196172152724319, guid: 8137c7a5d5bdcb74b989e7742fe740f3, type: 3}
-    amount: 0
-    collect: 0
+    amount: 3
+    collect: 1
   - root: {fileID: 923897212}
     prefab: {fileID: 7281587504014319669, guid: c0e3fdf6d59c5d54ebab4bd38ca77eff, type: 3}
-    amount: 0
-    collect: 0
+    amount: 3
+    collect: 1
   - root: {fileID: 476668956}
     prefab: {fileID: 6213465104149236589, guid: 084bd8afc3d9487429eb3c5b5c68f412, type: 3}
-    amount: 0
-    collect: 0
+    amount: 3
+    collect: 1
+  - root: {fileID: 1950178140}
+    prefab: {fileID: 8406463535230042339, guid: 26281275eccacac43a36019469807070, type: 3}
+    amount: 3
+    collect: 1
   Particle: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

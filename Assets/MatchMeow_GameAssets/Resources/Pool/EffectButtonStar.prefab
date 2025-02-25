@@ -50,6 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poolType: 5
+  _starButtonRect: {fileID: 5219008544649875753}
 --- !u!1 &2375022099592513514
 GameObject:
   m_ObjectHideFlags: 0

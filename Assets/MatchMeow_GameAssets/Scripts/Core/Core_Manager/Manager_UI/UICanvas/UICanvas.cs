@@ -41,6 +41,7 @@ public class UICanvas : MonoBehaviour
     //set up mac dinh cho UI de tranh truong hop bi nhay' hinh
     public virtual void Setup()
     {
+        transform.SetAsLastSibling();
         UIManager.Instance.AddBackUI(this);
         UIManager.Instance.PushBackAction(this, BackKey);
     }

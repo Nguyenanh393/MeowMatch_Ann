@@ -2,25 +2,37 @@ using System;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class LoadingUI : UICanvas
 {
-    [SerializeField] private Transform[] dots;
-    [SerializeField] private Vector3[] dotPositions;
+    [SerializeField] private RectTransform[] dots;
+    [SerializeField] private RectTransform[] dotOriginalPositions;
     [SerializeField] private float jumpHeight = 1f;
     [SerializeField] private float jumpDuration = 0.2f;
     [SerializeField] private float jumpDelay = 0.1f;
 
     private Sequence _sequence;
-    private void Awake()
+
+    private bool _isStarted;
+    private Sequence _jumpSequence;
+
+    private void Start()
     {
-        dotPositions = GetDotsPositions();
+        // TF.position = originalPos.anchoredPosition;
+        StartLoadingAnimation();
+        _isStarted = true;
     }
 
     private void OnEnable()
     {
+        if(!_isStarted) return;
         StartLoadingAnimation();
     }
+    // private void OnEnable()
+    // {
+    //     StartLoadingAnimation();
+    // }
 
     private void StartLoadingAnimation()
     {
@@ -30,8 +42,8 @@ public class LoadingUI : UICanvas
 
         for (int i = 0; i < dots.Length; i++)
         {
-            Transform dot = dots[i];
-            _sequence.Append(dot.DOJump(dotPositions[i], jumpHeight, 1, jumpDuration))
+            RectTransform dot = dots[i];
+            _sequence.Append(dot.DOJumpAnchorPos(dotOriginalPositions[i].anchoredPosition, jumpHeight, 1, jumpDuration))
                 .SetEase(Ease.OutQuad)
                 .SetDelay(jumpDelay);
         }
@@ -45,26 +57,14 @@ public class LoadingUI : UICanvas
         _sequence?.Kill();
 
         // Reset vị trí của các dots
-        SetDotsPositions(dotPositions);
+        SetDotsPositions(dotOriginalPositions);
     }
 
-    private Vector3[] GetDotsPositions()
+    private void SetDotsPositions(RectTransform[] originalPositions)
     {
-        Vector3[] positions = new Vector3[dots.Length];
-
-        for (int i = 0; i < dots.Length; i++)
+        for (int i = 0; i < originalPositions.Length; i++)
         {
-            positions[i] = dots[i].position;
-        }
-
-        return positions;
-    }
-
-    private void SetDotsPositions(Vector3[] positions)
-    {
-        for (int i = 0; i < positions.Length; i++)
-        {
-            dots[i].position = positions[i];
+            dots[i].anchoredPosition = originalPositions[i].anchoredPosition;
         }
     }
 }
