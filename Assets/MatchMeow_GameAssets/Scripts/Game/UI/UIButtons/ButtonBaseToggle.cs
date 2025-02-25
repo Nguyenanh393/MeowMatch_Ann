@@ -14,14 +14,18 @@ public class ButtonBaseToggle : MonoBehaviour
     [SerializeField] private Sprite iconImageOff;
     [SerializeField] private Color onColor;
     [SerializeField] private Color offColor;
-    [SerializeField] private Transform leftTarget;
-    [SerializeField] private Transform rightTarget;
+    [SerializeField] private RectTransform leftTarget;
+    [SerializeField] private RectTransform rightTarget;
 
     private bool _isOn = true;
 
-    public bool IsOn => _isOn;
+    public bool IsOn
+    {
+        get => _isOn;
+        set => _isOn = value;
+    }
 
-    private void Start()
+    protected virtual void Start()
     {
         UpdateVisuals();
     }
@@ -46,8 +50,8 @@ public class ButtonBaseToggle : MonoBehaviour
         backgroundImage.DOColor(_isOn? onColor : offColor, 0.1f);
 
         iconImage.sprite = _isOn ? iconImageOn : iconImageOff;
-        Transform target = _isOn ? rightTarget : leftTarget;
-        knop.DOMove(target.position, 0.1f);
+        RectTransform target = _isOn ? rightTarget : leftTarget;
+        knop.DOAnchorPos(target.anchoredPosition, 0.1f);
     }
 }
 

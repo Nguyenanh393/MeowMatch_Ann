@@ -1,11 +1,9 @@
-﻿namespace _UI.Scripts.UI
+﻿public enum GameState
 {
-    public enum GameState
-    {
-        MainMenu,
-        GamePlay,
-        Win,
-        Lose,
-        Setting
-    }
+    MainMenu,
+    GamePlay,
+    Win,
+    Lose,
+    Setting
 }
+

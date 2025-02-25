@@ -44,8 +44,8 @@ public class BlockMovable : Block, IPointerUpHandler, IDragHandler, IPointerDown
         int mapWidth = LevelManager.Instance.CurrentLevel.Width;
         int mapHeight = LevelManager.Instance.CurrentLevel.Height;
         _movementExtraX = (mapWidth/2f - 0.5f - Mathf.Floor(mapWidth/2f)) * _blockSize;
-        // _movementExtraY = (mapHeight/2f - 0.5f - Mathf.Floor(mapHeight/2f)) * _blockSize;
-        _movementExtraY = 0;
+        _movementExtraY = (mapHeight/2f - 0.5f - Mathf.Floor(mapHeight/2f)) * _blockSize;
+        // _movementExtraY = 0;
     }
 
     public void MoveBlock(Vector2 mousePos2D)

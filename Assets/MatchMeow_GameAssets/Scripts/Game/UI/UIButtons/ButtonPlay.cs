@@ -1,11 +1,12 @@
 using System;
-using _UI.Scripts.UI;
+// using _UI.Scripts.UI;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
 
 public class ButtonPlay : ButtonBase
 {
+    private Sequence _sequence;
     protected override async UniTask OnClickUniTask()
     {
         await base.OnClickUniTask();
@@ -20,7 +21,7 @@ public class ButtonPlay : ButtonBase
         await UniTask.Delay(TimeSpan.FromSeconds(2));
         UIManager.Instance.OpenUI<GamePlayUI>();
 
-        // GameManager.ChangeState(GameState.GamePlay);
+        GameManager.Instance.ChangeState(GameState.GamePlay);
         UIManager.Instance.GamePlayObject.SetActive(true);
     }
 
@@ -31,20 +32,25 @@ public class ButtonPlay : ButtonBase
 
     private void SetRepeatEffect()
     {
-        Sequence sequence = DOTween.Sequence();
+        _sequence = DOTween.Sequence();
 
         // Bước 1: Phóng to (1.2, 1.2, 1) rồi thu nhỏ về (1,1,1)
-        sequence.Append(transform.DOScale(new Vector3(1.2f, 1.2f, 1f), 0.3f).SetEase(Ease.OutQuad));
-        sequence.Append(transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.InQuad)).SetDelay(0.3f);
+        _sequence.Append(transform.DOScale(new Vector3(1.2f, 1.2f, 1f), 0.3f).SetEase(Ease.OutQuad)).SetLoops(-1, LoopType.Yoyo);
 
         // Bước 2: Lắc góc 5 độ lên xuống (2 lần)
-        sequence.Append(transform.DORotate(new Vector3(0, 0, 5), 0.1f).SetEase(Ease.InOutSine));
-        sequence.Append(transform.DORotate(new Vector3(0, 0, -5), 0.1f).SetEase(Ease.InOutSine));
-        sequence.Append(transform.DORotate(Vector3.zero, 0.1f).SetEase(Ease.InOutSine));
+        _sequence.Append(transform.DORotate(new Vector3(0, 0, 5), 0.1f).SetEase(Ease.InOutSine));
+        _sequence.Append(transform.DORotate(new Vector3(0, 0, -5), 0.1f).SetEase(Ease.InOutSine));
+        _sequence.Append(transform.DORotate(Vector3.zero, 0.1f).SetEase(Ease.InOutSine));
+
+        _sequence.Append(transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.InQuad));
 
         // Lặp lại toàn bộ hiệu ứng
-        sequence.SetLoops(-1, LoopType.Restart);
+        _sequence.SetLoops(-1, LoopType.Restart);
     }
 
+    private void OnDisable()
+    {
+        _sequence?.Kill();
+    }
 }
 

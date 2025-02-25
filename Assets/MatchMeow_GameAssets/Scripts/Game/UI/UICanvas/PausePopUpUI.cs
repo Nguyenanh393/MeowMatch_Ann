@@ -1,5 +1,7 @@
-public class PausePopUpUI : UICanvas
+using DG.Tweening;
+using UnityEngine;
+
+public class PausePopUpUI : PopUpUI
 {
 
 }
-

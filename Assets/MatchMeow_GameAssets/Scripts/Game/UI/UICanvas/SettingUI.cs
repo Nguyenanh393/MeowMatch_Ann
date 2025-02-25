@@ -1,4 +1,4 @@
-public class SettingUI : global::UICanvas
+public class SettingUI : PopUpUI
 {
 
 }

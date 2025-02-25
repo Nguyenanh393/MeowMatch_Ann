@@ -13,12 +13,15 @@ public class SoundManager :Singleton<SoundManager>
     private bool _isSoundOn = true;
     private void Start()
     {
+        _isSoundOn = PlayerPrefs.GetInt(Constance.PlayerPref.IS_SOUND_ON, 1) == 1 ? true : false;
         PlayBackgroundMusic();
     }
 
     private void PlayBackgroundMusic()
     {
         backgroundMusicSource.loop = true;
+        var volume = _isSoundOn ? 1f : 0f;
+        backgroundMusicSource.volume = volume;
         backgroundMusicSource.Play();
     }
 
@@ -45,6 +48,7 @@ public class SoundManager :Singleton<SoundManager>
     public void ToggleSound(bool isOn)
     {
         _isSoundOn = isOn;
+        PlayerPrefs.SetInt(Constance.PlayerPref.IS_SOUND_ON, _isSoundOn ? 1 : 0);
 
         // Bật/tắt âm lượng cho toàn bộ AudioSources
         var volume = _isSoundOn ? 1f : 0f;

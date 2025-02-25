@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class MainMenuLogoAtch : GameUnit
 {
-    [SerializeField] private Transform originalPos;
+    [SerializeField] private RectTransform thisRect;
+    [SerializeField] private RectTransform originalPos;
+    [SerializeField] private RectTransform startPos;
     private bool _isStarted;
+    private Sequence _jumpSequence;
     private void Start()
     {
-        TF.position = originalPos.position;
         OnEnableEffect();
         _isStarted = true;
     }
@@ -21,28 +23,33 @@ public class MainMenuLogoAtch : GameUnit
 
     private void OnEnableEffect()
     {
-        Vector3 startPos = TF.position + new Vector3(10f, 0f, 0f);
-        TF.position = startPos;
-        float duration = 0.4f;  // Tổng thời gian nhảy
+        thisRect.anchoredPosition = startPos.anchoredPosition;
+        float duration = 0.2f;  // Tổng thời gian nhảy
 
-        Sequence jumpSequence = DOTween.Sequence();
+        _jumpSequence = DOTween.Sequence();
 
-        jumpSequence.Append(TF.DOMoveX(originalPos.position.x, duration));
+        _jumpSequence.Append(thisRect.DOAnchorPosX(originalPos.anchoredPosition.x, duration));
 
-        jumpSequence.Join(TF.DOScale(new Vector3(1.2f, 0.8f, 1f), duration / 2));
+        _jumpSequence.Join(thisRect.DOScale(new Vector3(1.2f, 0.8f, 1f), duration / 2));
 
         // Hiệu ứng scale khi lên đỉnh nhảy
-        jumpSequence.Append(TF.DOScale(Vector3.one, duration / 4));
+        _jumpSequence.Append(thisRect.DOScale(Vector3.one, duration / 4));
 
         // Hiệu ứng scale khi rơi xuống
-        jumpSequence.Append(TF.DOScale(new Vector3(0.8f, 1.2f, 1f), duration / 4));
+        _jumpSequence.Append(thisRect.DOScale(new Vector3(0.8f, 1.2f, 1f), duration / 4));
 
         // Hiệu ứng scale khi chạm đất
-        jumpSequence.Append(TF.DOScale(Vector3.one, duration / 4));
+        _jumpSequence.Append(thisRect.DOScale(Vector3.one, duration / 4));
 
-        TF.localScale = new Vector3(1f, 1f, 1f);
-        TF.DOScale(1.1f, 0.6f) // Scale lên 1.1 trong 0.5 giây
+        thisRect.localScale = Vector3.one;
+        thisRect.DOScale(1.1f, 0.6f) // Scale lên 1.1 trong 0.5 giây
             .SetLoops(-1, LoopType.Yoyo) // Lặp vô hạn kiểu Yoyo (tăng rồi giảm)
             .SetEase(Ease.InOutSine); // Làm mượt hiệu ứng
+    }
+
+    private void OnDisable()
+    {
+        thisRect.localScale = Vector3.one;
+        thisRect.DOKill();
     }
 }

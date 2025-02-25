@@ -1,6 +1,6 @@
 using Cysharp.Threading.Tasks;
 
-public class ButtonSetting: ButtonBase
+public class ButtonSetting : ButtonBase
 {
     protected override async UniTask OnClickUniTask()
     {

@@ -5,6 +5,8 @@ public class Constance
     public class PlayerPref
     {
         public static string CURRENT_LEVEL_ID = "CurrentLevelId";
+        public static string IS_SOUND_ON = "IsSoundOn";
+        public static string IS_VIBRATION_ON = "IsVibrationOn";
 
     }
 

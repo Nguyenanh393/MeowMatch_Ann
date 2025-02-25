@@ -16,5 +16,6 @@
          UIManager.Instance.GamePlayObject.SetActive(false);
          UIManager.Instance.OpenUI<MainMenuUI>();
          UIManager.Instance.GetUI<GamePlayUI>().CountDownText.ResetCountdown();
+         GameManager.Instance.ChangeState(GameState.MainMenu);
      }
  }

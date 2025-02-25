@@ -16,7 +16,7 @@ public class LevelManager : Singleton<LevelManager>
 
     private void Awake()
     {
-        PlayerPrefs.DeleteAll();
+        // PlayerPrefs.DeleteAll();
         _currentLevelId = PlayerPrefs.GetInt(Constance.PlayerPref.CURRENT_LEVEL_ID, 1);
         LevelLoader levelLoader = new LevelLoader();
         levelLoader.LoadJson(_currentLevelId);

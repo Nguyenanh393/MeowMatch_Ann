@@ -273,6 +273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsDestroyOnClose: 0
+  animationDuration: 0.3
 --- !u!1 &4227249557866939358
 GameObject:
   m_ObjectHideFlags: 0

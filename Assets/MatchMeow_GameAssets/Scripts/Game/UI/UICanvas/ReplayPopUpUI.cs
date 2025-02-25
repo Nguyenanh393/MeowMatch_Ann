@@ -1,4 +1,4 @@
-public class ReplayPopUpUI : UICanvas
+public class ReplayPopUpUI : PopUpUI
 {
 
 }

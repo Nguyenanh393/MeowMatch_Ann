@@ -1,4 +1,4 @@
-public class LoseUI : UICanvas
+public class LoseUI : PopUpUI
 {
 
 }

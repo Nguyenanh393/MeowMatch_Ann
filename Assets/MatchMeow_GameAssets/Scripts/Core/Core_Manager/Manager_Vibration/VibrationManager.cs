@@ -1,8 +1,14 @@
+using System;
 using UnityEngine;
 
 public class VibrationManager : Singleton<VibrationManager>
 {
     private bool _isVibrationOn = true;
+
+    private void Start()
+    {
+        _isVibrationOn = PlayerPrefs.GetInt(Constance.PlayerPref.IS_VIBRATION_ON, 1) == 1 ? true : false;
+    }
 
     /// <summary>
     /// Rung mặc định
@@ -23,6 +29,7 @@ public class VibrationManager : Singleton<VibrationManager>
     public void ToggleVibration(bool isOn)
     {
         _isVibrationOn = isOn;
+        PlayerPrefs.SetInt(Constance.PlayerPref.IS_VIBRATION_ON, _isVibrationOn ? 1 : 0);
     }
 
     /// <summary>

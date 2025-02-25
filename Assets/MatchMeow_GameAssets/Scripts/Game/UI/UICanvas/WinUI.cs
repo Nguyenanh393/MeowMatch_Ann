@@ -1,4 +1,4 @@
-public class WinUI : UICanvas
+public class WinUI : PopUpUI
 {
 
 }
