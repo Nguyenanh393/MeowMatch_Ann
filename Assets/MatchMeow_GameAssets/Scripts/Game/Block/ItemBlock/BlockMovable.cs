@@ -311,6 +311,7 @@ public class BlockMovable : Block, IPointerUpHandler, IDragHandler, IPointerDown
         if (Vector2.Distance(TF.localPosition, _anotherBlockMovable.BlockStatic.TF.localPosition) < 0.1f)
         {
             SoundManager.Instance.PlayScoreSound();
+            VibrationManager.Instance.Vibrate();
         }
 
         if (Vector2.Distance(TF.localPosition, _blockStatic.TF.localPosition) < 0.1f)

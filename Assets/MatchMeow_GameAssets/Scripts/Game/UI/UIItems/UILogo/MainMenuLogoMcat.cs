@@ -3,17 +3,18 @@ using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Sequence = DG.Tweening.Sequence;
 
 public class MainMenuLogoMcat : GameUnit
 {
-    private Vector3 _originalPos;
+    [SerializeField] private Transform originalPos;
     private bool _isStarted;
 
 
     private void Start()
     {
-        _originalPos = TF.position;
+        TF.position = originalPos.position;
         OnInit().Forget();
         _isStarted = true;
     }
@@ -33,7 +34,7 @@ public class MainMenuLogoMcat : GameUnit
         Sequence jumpSequence = DOTween.Sequence();
 
         // Hiệu ứng nhảy
-        jumpSequence.Append(TF.DOJump(_originalPos, jumpPower, numJumps, duration)
+        jumpSequence.Append(TF.DOJump(originalPos.position, jumpPower, numJumps, duration)
             .SetEase(Ease.OutQuad));
 
         // Hiệu ứng scale khi bắt đầu nhảy

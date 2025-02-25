@@ -10,6 +10,7 @@ public class SoundManager :Singleton<SoundManager>
     [SerializeField] private AudioSource winSoundSource;
     [SerializeField] private AudioSource loseSoundSource;
 
+    private bool _isSoundOn = true;
     private void Start()
     {
         PlayBackgroundMusic();
@@ -23,22 +24,40 @@ public class SoundManager :Singleton<SoundManager>
 
     public void PlayButtonSound()
     {
-        buttonSoundSource.Play();
+        if (_isSoundOn) buttonSoundSource.Play();
     }
 
     public void PlayScoreSound()
     {
-        scoreSoundSource.Play();
+        if (_isSoundOn) scoreSoundSource.Play();
     }
 
     public void PlayWinSound()
     {
-        winSoundSource.Play();
+        if (_isSoundOn) winSoundSource.Play();
     }
 
     public void PlayLoseSound()
     {
-        loseSoundSource.Play();
+        if (_isSoundOn) loseSoundSource.Play();
+    }
+
+    public void ToggleSound(bool isOn)
+    {
+        _isSoundOn = isOn;
+
+        // Bật/tắt âm lượng cho toàn bộ AudioSources
+        var volume = _isSoundOn ? 1f : 0f;
+        backgroundMusicSource.volume = volume;
+        buttonSoundSource.volume = volume;
+        scoreSoundSource.volume = volume;
+        winSoundSource.volume = volume;
+        loseSoundSource.volume = volume;
+    }
+
+    public bool IsSoundOn()
+    {
+        return _isSoundOn;
     }
 }
 

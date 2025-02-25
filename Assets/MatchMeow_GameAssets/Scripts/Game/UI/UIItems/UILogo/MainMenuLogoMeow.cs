@@ -6,12 +6,12 @@ namespace MatchMeow_GameAssets.Scripts.Game.UI.UIItems.UILogo
 {
     public class LogoMeowMainMenu : GameUnit
     {
-        private Vector3 _originalPos;
+        [SerializeField] private Transform originalPos;
         private bool _isStarted;
 
         private void Start()
         {
-            _originalPos = TF.position;
+            TF.position = originalPos.position;
             OnEnableEffect();
             _isStarted = true;
         }
@@ -24,14 +24,13 @@ namespace MatchMeow_GameAssets.Scripts.Game.UI.UIItems.UILogo
 
         private void OnEnableEffect()
         {
-            _originalPos = TF.position;
             Vector3 startPos = TF.position + new Vector3(0f, 2f, 0f);
             TF.position = startPos;
             float duration = 0.4f;  // Tổng thời gian nhảy
 
             Sequence jumpSequence = DOTween.Sequence();
 
-            jumpSequence.Append(TF.DOMoveY(_originalPos.y, duration));
+            jumpSequence.Append(TF.DOMoveY(originalPos.position.y, duration));
 
             jumpSequence.Join(TF.DOScale(new Vector3(1.2f, 1.2f, 1f), duration / 2));
 

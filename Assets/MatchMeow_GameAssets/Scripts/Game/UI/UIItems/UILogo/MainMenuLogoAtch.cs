@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class MainMenuLogoAtch : GameUnit
 {
-    private Vector3 _originalPos;
+    [SerializeField] private Transform originalPos;
     private bool _isStarted;
     private void Start()
     {
-        _originalPos = TF.position;
+        TF.position = originalPos.position;
         OnEnableEffect();
         _isStarted = true;
     }
@@ -21,14 +21,13 @@ public class MainMenuLogoAtch : GameUnit
 
     private void OnEnableEffect()
     {
-        _originalPos = TF.position;
         Vector3 startPos = TF.position + new Vector3(10f, 0f, 0f);
         TF.position = startPos;
         float duration = 0.4f;  // Tổng thời gian nhảy
 
         Sequence jumpSequence = DOTween.Sequence();
 
-        jumpSequence.Append(TF.DOMoveX(_originalPos.x, duration));
+        jumpSequence.Append(TF.DOMoveX(originalPos.position.x, duration));
 
         jumpSequence.Join(TF.DOScale(new Vector3(1.2f, 0.8f, 1f), duration / 2));
 

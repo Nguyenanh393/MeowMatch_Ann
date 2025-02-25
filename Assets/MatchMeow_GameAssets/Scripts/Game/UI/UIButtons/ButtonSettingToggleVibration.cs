@@ -1,7 +1,16 @@
-namespace MatchMeow_GameAssets.Scripts.Game.UI.UIButtons
+public class ButtonSettingToggleVibration : ButtonBaseToggle
 {
-    public class ButtonSettingToggleVibration
+    protected override void DoWhenClicked()
     {
-        
+        base.DoWhenClicked(); // Gọi hàm từ class cha để xử lý chuyển đổi toggle
+
+        // Tắt/bật rung thông qua VibrationManager
+        VibrationManager.Instance.ToggleVibration(IsOn);
+
+        // Phát âm thanh click (nếu âm thanh chưa tắt)
+        if (SoundManager.Instance.IsSoundOn())
+        {
+            SoundManager.Instance.PlayButtonSound();
+        }
     }
 }

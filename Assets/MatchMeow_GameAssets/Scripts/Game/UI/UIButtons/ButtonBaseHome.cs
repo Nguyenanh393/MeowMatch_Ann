@@ -10,12 +10,11 @@
 
      }
 
-     private void DoWhenClicked()
+     protected virtual void DoWhenClicked()
      {
          UIManager.Instance.CloseAll();
          UIManager.Instance.GamePlayObject.SetActive(false);
          UIManager.Instance.OpenUI<MainMenuUI>();
-         LevelManager.Instance.LoadNextLevel();
          UIManager.Instance.GetUI<GamePlayUI>().CountDownText.ResetCountdown();
      }
  }
