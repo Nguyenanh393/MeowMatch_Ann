@@ -46,6 +46,7 @@ public class GameManager : Singleton<GameManager>
 
     public async UniTaskVoid OnWinState()
     {
+        // UpdatePlayerCoin();
         UIManager.Instance.GetUI<GamePlayUI>().CountDownText.PauseCountdown();
         SoundManager.Instance.PlayWinSound();
         UIManager.Instance.OpenUI<WinUI>();
@@ -84,5 +85,12 @@ public class GameManager : Singleton<GameManager>
         UIManager.Instance.GetUI<GamePlayUI>().CountDownText.ResetCountdown();
     }
 
-
+    private void UpdatePlayerCoin()
+    {
+        int currentCoinsValue = PlayerPrefs.GetInt(Constance.PlayerPref.COIN_VALUE, 0);
+        int currentLevelCoin = LevelManager.Instance.CurrentLevel.Coin;
+        int updatedLevelCoin = currentLevelCoin + currentCoinsValue;
+        PlayerPrefs.SetInt(Constance.PlayerPref.COIN_VALUE, updatedLevelCoin);
+        Debug.Log("Update Player Coin Cmplete" + updatedLevelCoin);
+    }
 }

@@ -34,11 +34,11 @@ public class LevelManager : Singleton<LevelManager>
             // PlayerPrefs.SetInt(Constance.PlayerPref.CURRENT_LEVEL_ID, _currentLevelId);
             // ng choi chi co the load nhung level da choi
         }
-        Debug.Log(BlockManager.Instance.MatrixToString(LevelManager.Instance.CurrentLevel.Map));
+        // Debug.Log(BlockManager.Instance.MatrixToString(LevelManager.Instance.CurrentLevel.Map));
         BlockManager.Instance.RemoveAllMapBoard();
         BlockManager.Instance.OnInit();
         BlockManager.Instance.LoadMapBoard();
-        Debug.Log(BlockManager.Instance.MatrixToString(BlockManager.Instance.CurrentMap));
+        // Debug.Log(BlockManager.Instance.MatrixToString(BlockManager.Instance.CurrentMap));
     }
 
     [ContextMenu("LoadNextLevel")]

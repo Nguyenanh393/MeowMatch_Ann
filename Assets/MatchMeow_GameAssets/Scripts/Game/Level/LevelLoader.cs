@@ -13,8 +13,8 @@ public class LevelLoader
         {
             Level level = ConvertTextAssetToLevel(textAsset);
             LevelManager.Instance.CurrentLevel = level;
-            Debug.Log("JSON data loaded successfully.");
-            Debug.Log(LevelManager.Instance.CurrentLevel);
+            // Debug.Log("JSON data loaded successfully.");
+            // Debug.Log(LevelManager.Instance.CurrentLevel);
         }
         else
         {
@@ -31,8 +31,9 @@ public class LevelLoader
         int levelHeight = (int) levelData[Constance.JsonKey.HEIGHT];
         int[][] levelMap = levelData[Constance.JsonKey.MAP]!.ToObject<int[][]>();
         int levelMaxValue = (int)levelData[Constance.JsonKey.MAX_VALUE];
+        int levelCoin = (int)levelData[Constance.JsonKey.COIN];
 
-        return new Level(levelId, levelWidth, levelHeight, levelMap, levelMaxValue);
+        return new Level(levelId, levelWidth, levelHeight, levelMap, levelMaxValue, levelCoin);
     }
 }
 

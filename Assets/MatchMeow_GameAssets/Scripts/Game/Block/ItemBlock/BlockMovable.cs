@@ -118,13 +118,13 @@ public class BlockMovable : Block, IPointerUpHandler, IDragHandler, IPointerDown
             }
         }
 
-        Debug.Log("minIndexFound" + minIndexFound + " _currentPath.Count - 1 " + (_currentPath.Count - 1));
+        // Debug.Log("minIndexFound" + minIndexFound + " _currentPath.Count - 1 " + (_currentPath.Count - 1));
         if (minIndexFound < _currentPath.Count - 1 && minIndexFound >= 0 && path != _currentPath)
         {
             for (int i = _currentPath.Count - 1; i > minIndexFound; i--)
             {
                 // remove path block
-                Debug.Log("RemovePathBlock" + _currentPath[i - 1].x.ToString() +  _currentPath[i - 1].y.ToString());
+                // Debug.Log("RemovePathBlock" + _currentPath[i - 1].x.ToString() +  _currentPath[i - 1].y.ToString());
                 RemovePathBlock(_currentPath[i - 1].x, _currentPath[i - 1].y);
                 _currentPath.RemoveAt(i);
 
@@ -205,7 +205,7 @@ public class BlockMovable : Block, IPointerUpHandler, IDragHandler, IPointerDown
     {
         float posX = Mathf.Round((delta.x - _movementExtraX) / _blockSize) * _blockSize + _movementExtraX;
         float posY = Mathf.Round((delta.y - _movementExtraY) / _blockSize) * _blockSize + _movementExtraY;
-        Debug.Log("posX" + posX + "posY" + posY);
+        // Debug.Log("posX" + posX + "posY" + posY);
         int targetIndexRow = (int) Mathf.Round((BlockManager.Instance.StartY - posY) / _blockSize);
         int targetIndexCol = (int) Mathf.Round((posX - BlockManager.Instance.StartX) / _blockSize);
 
@@ -216,14 +216,14 @@ public class BlockMovable : Block, IPointerUpHandler, IDragHandler, IPointerDown
         Vector2 startPos = new Vector2(startIndexRow, startIndexCol);
         Vector2 targetPos = new Vector2(targetIndexRow, targetIndexCol);
 
-        Debug.Log("start: " + startPos + " target: " + targetPos);
+        // Debug.Log("start: " + startPos + " target: " + targetPos);
         return new Tuple<Vector2, Vector2, int, int>(startPos, targetPos, targetIndexRow, targetIndexCol);
 
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        Debug.Log("MovableBlock OnPointerDown");
+        // Debug.Log("MovableBlock OnPointerDown");
         BlockManager.Instance.CurrentColorIndex = _colorIndex;
         if (_currentPath.Count == 0)
         {
@@ -381,7 +381,7 @@ public class BlockMovable : Block, IPointerUpHandler, IDragHandler, IPointerDown
         // Vector2 delta2D = new Vector2(delta.x - Constance.ScreenInfo.SCREEN_WIDTH/2, delta.y - Constance.ScreenInfo.SCREEN_HEIGHT/2);
         // Debug.Log(delta + " " + delta2D);
         Vector2 delta2D = new Vector2(delta.x, delta.y);
-        Debug.Log(delta2D);
+        // Debug.Log(delta2D);
         // BlockMovable block = BlockManager.Instance.ChoosenBlocks[BlockManager.Instance.CurrentColorIndex];
         // if (block == this)
         // {

@@ -4,6 +4,7 @@
     GamePlay,
     Win,
     Lose,
-    Setting
+    Setting,
+    CatGamePlay
 }
 

@@ -31,7 +31,7 @@ public class BlockManager :  Singleton<BlockManager>
         Constance.ScreenInfo.SCREEN_WIDTH = UIManager.Instance.CanvasParentTF.gameObject
             .GetComponent<RectTransform>().rect.width;
 
-        Debug.Log(Constance.ScreenInfo.SCREEN_WIDTH + " " + Constance.ScreenInfo.SCREEN_HEIGHT);
+        // Debug.Log(Constance.ScreenInfo.SCREEN_WIDTH + " " + Constance.ScreenInfo.SCREEN_HEIGHT);
     }
 
     private void Start()
@@ -201,7 +201,7 @@ public class BlockManager :  Singleton<BlockManager>
             _currentMap[(int) mapPos.x][(int) mapPos.y] = colorIndex;
         }
 
-        Debug.Log(MatrixToString(_currentMap));
+        // Debug.Log(MatrixToString(_currentMap));
         // Debug.Log(MatrixToString(_fixedMap));
     }
 

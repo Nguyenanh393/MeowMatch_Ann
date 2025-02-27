@@ -7,6 +7,7 @@ public class Constance
         public static string CURRENT_LEVEL_ID = "CurrentLevelId";
         public static string IS_SOUND_ON = "IsSoundOn";
         public static string IS_VIBRATION_ON = "IsVibrationOn";
+        public static string COIN_VALUE = "CoinValue";
 
     }
 
@@ -22,6 +23,7 @@ public class Constance
         public static string HEIGHT = "height";
         public static string MAP = "map";
         public static string MAX_VALUE = "max_value";
+        public static string COIN = "coin";
     }
 
     public class InGameObject
