@@ -37,4 +37,12 @@ public class Constance
         public static float SCREEN_HEIGHT = 1920f;
         public static float SCREEN_WIDTH = 1080f;
     }
+
+    public class RegardBonusAd
+    {
+        public static int COIN_NOT_BONUS = 1;
+        public static int HEALTH_NOT_BONUS = 1;
+        public static int COIN_BONUS_AD = 2;
+        public static int HEART_BONUS_AD = 3;
+    }
 }

@@ -14,7 +14,6 @@ public class ButtonBase : GameUnit
     private void Start()
     {
         _originalScale = TF.localScale.x;
-        // _button.onClick.AddListener(OnClickVoid);
     }
 
     public void OnSoundOn()
@@ -35,7 +34,6 @@ public class ButtonBase : GameUnit
     {
         StartClicked();
         EndClicked();
-        // await SpawnStars();
     }
 
     public void OnClickVoid()
@@ -43,32 +41,4 @@ public class ButtonBase : GameUnit
         OnClickUniTask().Forget();
     }
 
-    private async UniTask SpawnStars()
-    {
-        // if (_isSpawning) return; // Nếu đang chạy, không thực hiện tiếp
-        // _isSpawning = true;
-        //
-        // List<UniTask> starTasks = new List<UniTask>();
-        // for (int i = 0; i < 20; i++)
-        // {
-        //     StarButton starButton = SimplePool.Spawn<StarButton>(PoolType.POOLTYPE_BUTTON_STAR,
-        //         starSpawnPoint.position,
-        //         Quaternion.identity);
-        //     starButton.OnInit();
-        //     Vector2 randomDirection = UnityEngine.Random.insideUnitCircle.normalized * 1.5f;
-        //     var tween1 = starButton.TF.DOScale(0.3f, 0.35f).OnComplete(() => DeSpawnStar(starButton));
-        //     var tween2 = starButton.TF.DOMove((Vector2)starSpawnPoint.position + randomDirection,
-        //             0.6f)
-        //         .SetEase(Ease.OutQuad);
-        //     starTasks.Add(tween1.ToUniTask());
-        //     starTasks.Add(tween2.ToUniTask());
-        // }
-        // await UniTask.WhenAll(starTasks);
-        // _isSpawning = false;
-    }
-
-    private void DeSpawnStar(StarButton starButton)
-    {
-        SimplePool.Despawn(starButton);
-    }
 }

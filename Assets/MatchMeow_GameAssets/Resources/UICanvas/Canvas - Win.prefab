@@ -241,6 +241,7 @@ GameObject:
   - component: {fileID: 8588135316972232915}
   - component: {fileID: 4038906485191291332}
   - component: {fileID: 1478542602659932050}
+  - component: {fileID: 5185487232677417057}
   m_Layer: 5
   m_Name: Button - Regard
   m_TagString: Untagged
@@ -350,7 +351,34 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4038906485191291332}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6917854166704023034}
+        m_TargetAssemblyTypeName: AssetKits.ParticleImage.ParticleImage, ParticleImage
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5185487232677417057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548586646578800512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5442569882ce490f92caa7f5d8ef88bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  buttonText: {fileID: 8680449515101972216}
+  isAdButton: 0
 --- !u!1 &618831326011648213
 GameObject:
   m_ObjectHideFlags: 0
@@ -821,7 +849,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6505373686859594654}
-  m_Father: {fileID: 827965876601235429}
+  m_Father: {fileID: 819615150836412599}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -878,7 +906,7 @@ MonoBehaviour:
   _loop: 0
   _prewarm: 0
   _duration: 0.3
-  _playMode: 2
+  _playMode: 0
   _startSize:
     separable: 1
     separated: 0
@@ -1029,8 +1057,8 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    m_ConstantMin: 1.5
-    m_ConstantMax: 2
+    m_ConstantMin: 1.2
+    m_ConstantMax: 1.5
   _startSpeed:
     m_Mode: 3
     m_CurveMultiplier: 0
@@ -1791,36 +1819,18 @@ MonoBehaviour:
         value: 1
         inSlope: 0
         outSlope: 0
-        tangentMode: 0
+        tangentMode: 34
         weightedMode: 0
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.23662984
-        value: -0.16690838
-        inSlope: -0.18505974
-        outSlope: -0.18505974
-        tangentMode: 0
-        weightedMode: 2
-        inWeight: 0.33333334
-        outWeight: 0.3690642
-      - serializedVersion: 3
-        time: 0.30901414
-        value: 0.06097493
-        inSlope: -0.48188597
-        outSlope: -0.48188597
-        tangentMode: 0
-        weightedMode: 3
-        inWeight: 0.5200996
-        outWeight: 0.7047364
-      - serializedVersion: 3
-        time: 0.3598097
-        value: 0
-        inSlope: 0.0051522027
-        outSlope: 0.0051522027
-        tangentMode: 0
-        weightedMode: 1
-        inWeight: 0.37683383
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -2280,7 +2290,31 @@ MonoBehaviour:
   _multithreadEnabled: 0
   _onStart:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9099835974621050662}
+        m_TargetAssemblyTypeName: ButtonBase, Assembly-CSharp
+        m_MethodName: OnSoundOn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 9099835974621050662}
+        m_TargetAssemblyTypeName: ButtonBase, Assembly-CSharp
+        m_MethodName: OnClickVoid
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _onFirstParticleFinish:
     m_PersistentCalls:
       m_Calls: []
@@ -2296,7 +2330,7 @@ MonoBehaviour:
   moduleEmitterFoldout: 1
   moduleParticleFoldout: 1
   moduleMovementFoldout: 1
-  moduleEventsFoldout: 0
+  moduleEventsFoldout: 1
   moduleAdvancedFoldout: 0
   m_Sprite: {fileID: 21300000, guid: f7b55c35869979b4887d880070665306, type: 3}
   m_Texture: {fileID: 0}
@@ -2460,7 +2494,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &9170531567015694374
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2474,11 +2508,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 379486075240589377}
-  - {fileID: 1613594484264446882}
   - {fileID: 105492827724592517}
-  - {fileID: 5321126647505612261}
   - {fileID: 7717961995076472225}
-  - {fileID: 7438455291173695175}
   m_Father: {fileID: 251484074694360246}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -2520,7 +2551,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 100, y: -170}
-  m_SizeDelta: {x: 300, y: 500}
+  m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &3008482069932034073
 GameObject:
@@ -2631,6 +2662,7 @@ RectTransform:
   - {fileID: 2212573768109230739}
   - {fileID: 6573594285348998139}
   - {fileID: 251484074694360246}
+  - {fileID: 819615150836412599}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2654,6 +2686,7 @@ MonoBehaviour:
   animationDuration: 0.3
   regardButtons: {fileID: 4690721855802551258}
   functionButtons: {fileID: 2634101543077456939}
+  coinText: {fileID: 6195525637040759954}
 --- !u!1 &3901558361121633325
 GameObject:
   m_ObjectHideFlags: 0
@@ -2688,8 +2721,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0014524, y: -0.000020981}
-  m_SizeDelta: {x: 138.38, y: 46.53}
+  m_AnchoredPosition: {x: 10, y: 0}
+  m_SizeDelta: {x: 300, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4928198534580245385
 CanvasRenderer:
@@ -2712,20 +2745,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_Color: {r: 0.26666668, g: 0.13333334, b: 0.1254902, a: 1}
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 39
+    m_Font: {fileID: 12800000, guid: 7afc4d4605243d34485b674bc5729a4e, type: 3}
+    m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 102
+    m_MinSize: 0
+    m_MaxSize: 266
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -2784,7 +2817,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &827965876601235429
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2798,9 +2831,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1265884605938314253}
-  - {fileID: 6917854166704023035}
   - {fileID: 6778226289348191560}
-  - {fileID: 2371921550705527627}
   m_Father: {fileID: 251484074694360246}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -3063,6 +3094,46 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &6628014881074328682
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 819615150836412599}
+  m_Layer: 5
+  m_Name: Particles
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &819615150836412599
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6628014881074328682}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6917854166704023035}
+  - {fileID: 2371921550705527627}
+  - {fileID: 1613594484264446882}
+  - {fileID: 5321126647505612261}
+  - {fileID: 7438455291173695175}
+  m_Father: {fileID: 8449277098908776592}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &6917854166704023036
 GameObject:
   m_ObjectHideFlags: 0
@@ -3094,7 +3165,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1922015894004602158}
-  m_Father: {fileID: 827965876601235429}
+  m_Father: {fileID: 819615150836412599}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3151,7 +3222,7 @@ MonoBehaviour:
   _loop: 0
   _prewarm: 0
   _duration: 0.3
-  _playMode: 2
+  _playMode: 0
   _startSize:
     separable: 1
     separated: 0
@@ -3302,8 +3373,8 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    m_ConstantMin: 1.5
-    m_ConstantMax: 2
+    m_ConstantMin: 1.2
+    m_ConstantMax: 1.5
   _startSpeed:
     m_Mode: 3
     m_CurveMultiplier: 0
@@ -4064,36 +4135,18 @@ MonoBehaviour:
         value: 1
         inSlope: 0
         outSlope: 0
-        tangentMode: 0
+        tangentMode: 34
         weightedMode: 0
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.23662984
-        value: -0.16690838
-        inSlope: -0.18505974
-        outSlope: -0.18505974
-        tangentMode: 0
-        weightedMode: 2
-        inWeight: 0.33333334
-        outWeight: 0.3690642
-      - serializedVersion: 3
-        time: 0.30901414
-        value: 0.06097493
-        inSlope: -0.48188597
-        outSlope: -0.48188597
-        tangentMode: 0
-        weightedMode: 3
-        inWeight: 0.5200996
-        outWeight: 0.7047364
-      - serializedVersion: 3
-        time: 0.3598097
-        value: 0
-        inSlope: 0.0051522027
-        outSlope: 0.0051522027
-        tangentMode: 0
-        weightedMode: 1
-        inWeight: 0.37683383
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -4553,7 +4606,31 @@ MonoBehaviour:
   _multithreadEnabled: 0
   _onStart:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5185487232677417057}
+        m_TargetAssemblyTypeName: ButtonBase, Assembly-CSharp
+        m_MethodName: OnSoundOn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5185487232677417057}
+        m_TargetAssemblyTypeName: ButtonBase, Assembly-CSharp
+        m_MethodName: OnClickVoid
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _onFirstParticleFinish:
     m_PersistentCalls:
       m_Calls: []
@@ -4569,7 +4646,7 @@ MonoBehaviour:
   moduleEmitterFoldout: 1
   moduleParticleFoldout: 1
   moduleMovementFoldout: 1
-  moduleEventsFoldout: 0
+  moduleEventsFoldout: 1
   moduleAdvancedFoldout: 0
   m_Sprite: {fileID: 21300000, guid: f7b55c35869979b4887d880070665306, type: 3}
   m_Texture: {fileID: 0}
@@ -4585,6 +4662,7 @@ GameObject:
   - component: {fileID: 5213074755812285426}
   - component: {fileID: 1855382786354133194}
   - component: {fileID: 5992437926145608663}
+  - component: {fileID: 9099835974621050662}
   m_Layer: 5
   m_Name: Button - RegardAd
   m_TagString: Untagged
@@ -4694,7 +4772,34 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1855382786354133194}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2371921550705527626}
+        m_TargetAssemblyTypeName: AssetKits.ParticleImage.ParticleImage, ParticleImage
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &9099835974621050662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6948488359937867018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5442569882ce490f92caa7f5d8ef88bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  buttonText: {fileID: 7490827698673250265}
+  isAdButton: 1
 --- !u!1 &7404980022529578362
 GameObject:
   m_ObjectHideFlags: 0
@@ -4925,7 +5030,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 9170531567015694374}
+    m_TransformParent: {fileID: 819615150836412599}
     m_Modifications:
     - target: {fileID: 4414756277795401052, guid: 068c8ea64ea90cd418feba8be83a8ea5, type: 3}
       propertyPath: m_Pivot.x
@@ -5086,7 +5191,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 9170531567015694374}
+    m_TransformParent: {fileID: 819615150836412599}
     m_Modifications:
     - target: {fileID: 4414756277795401052, guid: 068c8ea64ea90cd418feba8be83a8ea5, type: 3}
       propertyPath: m_Pivot.x
@@ -5247,7 +5352,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 9170531567015694374}
+    m_TransformParent: {fileID: 819615150836412599}
     m_Modifications:
     - target: {fileID: 4414756277214185904, guid: 068c8ea64ea90cd418feba8be83a8ea5, type: 3}
       propertyPath: _bursts.Array.data[0].used

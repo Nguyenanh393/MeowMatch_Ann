@@ -17,7 +17,7 @@ public class ButtonHomeCat : ButtonBase
         UIManager.Instance.CloseUI<CatLoadingUI>(2f);
 
         await UniTask.Delay(TimeSpan.FromSeconds(2));
-        // UIManager.Instance.OpenUI<GamePlayUI>();
+        UIManager.Instance.OpenUI<CatGamePlayUI>();
 
         GameManager.Instance.ChangeState(GameState.CatGamePlay);
         // UIManager.Instance.GamePlayObject.SetActive(true);
