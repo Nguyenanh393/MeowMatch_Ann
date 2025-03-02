@@ -69,7 +69,7 @@ public class GamePlayUI : UICanvas
 
     private void SetCoinText()
     {
-        int currentCoin = PlayerPrefs.GetInt(Constance.PlayerPref.COIN_VALUE, 0);
+        int currentCoin = PlayerCurrencyManager.Instance.GetCoins();
         coinText.text = currentCoin.ToString();
     }
 }

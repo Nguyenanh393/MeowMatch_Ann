@@ -30,11 +30,16 @@ public class ButtonHomeCat : ButtonBase
 
     private void SetRepeatEffect()
     {
-        TF.localScale = Vector3.one;
+
         // Bước 1: Phóng to (1.2, 1.2, 1) rồi thu nhỏ về (1,1,1)
         TF.DOScale(new Vector3(1.2f, 1.2f, 1f), 0.3f).SetEase(Ease.OutQuad).SetLoops(-1, LoopType.Yoyo);
 
     }
 
+    private void OnDisable()
+    {
+        TF.DOKill();
+        TF.localScale = Vector3.one;
+    }
 }
 

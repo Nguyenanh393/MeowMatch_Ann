@@ -2687,6 +2687,7 @@ MonoBehaviour:
   regardButtons: {fileID: 4690721855802551258}
   functionButtons: {fileID: 2634101543077456939}
   coinText: {fileID: 6195525637040759954}
+  coinAnimationDuration: 1.5
 --- !u!1 &3901558361121633325
 GameObject:
   m_ObjectHideFlags: 0

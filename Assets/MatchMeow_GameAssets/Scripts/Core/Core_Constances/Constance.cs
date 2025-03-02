@@ -8,7 +8,8 @@ public class Constance
         public static string IS_SOUND_ON = "IsSoundOn";
         public static string IS_VIBRATION_ON = "IsVibrationOn";
         public static string COIN_VALUE = "CoinValue";
-
+        public static string HEART_VALUE = "HeartValue";
+        public static string REWARD_COLLECTED_KEY = "RewardCollected_Level_";
     }
 
     public class LevelLoader
@@ -41,8 +42,13 @@ public class Constance
     public class RegardBonusAd
     {
         public static int COIN_NOT_BONUS = 1;
-        public static int HEALTH_NOT_BONUS = 1;
+        public static int HEART_NOT_BONUS = 1;
         public static int COIN_BONUS_AD = 2;
         public static int HEART_BONUS_AD = 3;
+    }
+
+    public class RegardHeart
+    {
+        public static int HEART_VALUE = 8;
     }
 }

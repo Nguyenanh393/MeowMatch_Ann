@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23749e6f176a46a092d9235c62b99aab, type: 3}
+  m_Name: ShopItemDatabase - Hat
+  m_EditorClassIdentifier: 
+  items:
+  - itemType: 2
+    displayName: Blue Fishie Hat
+    icon: {fileID: 21300000, guid: 5fd8590443e5c31439e6124a7732c09f, type: 3}
+    price: 20
+    canBuyMultiple: 0
+    description: 
+  - itemType: 2
+    displayName: Orange Pumkin Hat
+    icon: {fileID: 21300000, guid: a10120c1af2c4dd419ab45521b6241f2, type: 3}
+    price: 20
+    canBuyMultiple: 0
+    description: 
+  - itemType: 2
+    displayName: Pink Flower Hat
+    icon: {fileID: 21300000, guid: c969a71e3899d034cb8b27a15a627dda, type: 3}
+    price: 20
+    canBuyMultiple: 0
+    description: 

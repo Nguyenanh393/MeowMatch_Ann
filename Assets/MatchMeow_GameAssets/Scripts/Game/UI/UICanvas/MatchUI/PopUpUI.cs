@@ -1,3 +1,4 @@
+using System;
 using DG.Tweening;
 using UnityEngine;
 
@@ -23,5 +24,10 @@ public class PopUpUI : UICanvas
     //     transform.DOScale(_hiddenScale, animationDuration)
     //         .SetEase(Ease.InBack)
     //         .OnComplete(() => gameObject.SetActive(false));
+    // }
+    // private void OnDisable()
+    // {
+    //     transform.localScale = _visibleScale;
+    //     transform.DOScale(_visibleScale, animationDuration).SetEase(Ease.OutBack);
     // }
 }
