@@ -1,20 +1,18 @@
 using Cysharp.Threading.Tasks;
 
-namespace MatchMeow_GameAssets.Scripts.Game.UI.UIButtons.ButtonCat.ButtonCatGamePlayUI
+
+public class ButtonCatGamePlayClean : ButtonBase
 {
-    public class ButtonCatGamePlayClean : ButtonBase
+    protected override async UniTask OnClickUniTask()
     {
-        protected override async UniTask OnClickUniTask()
-        {
-            await base.OnClickUniTask();
+        await base.OnClickUniTask();
 
-            DoWhenClicked();
+        DoWhenClicked();
 
-        }
+    }
 
-        private void DoWhenClicked()
-        {
+    private void DoWhenClicked()
+    {
 
-        }
     }
 }

@@ -9,7 +9,7 @@ Library: D:\ProjectGame\MatchMeow\MatchMeow\Temp\BurstOutput\tempburstlibs\arm64
 --target-framework=NetFramework
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=D:\ProjectGame\MatchMeow\MatchMeow\Temp\Burst
---key-folder=D:/Unity/Editor/2022.3.50f1/Editor/Data/PlaybackEngines/AndroidPlayer
+--key-folder=D:/Unity/Editor/2022.3.50f1-x86_64/Editor/Data/PlaybackEngines/AndroidPlayer
 --decode-folder=D:\ProjectGame\MatchMeow\MatchMeow\Library\Burst
 --output=D:\ProjectGame\MatchMeow\MatchMeow\Temp\BurstOutput\tempburstlibs\arm64-v8a\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/

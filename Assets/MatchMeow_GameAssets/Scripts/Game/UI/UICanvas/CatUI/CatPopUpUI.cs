@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using MatchMeow_GameAssets.Scripts.Game.UI.UIButtons.ButtonCat.ButtonCatGamePlayUI;
 using UnityEngine;
 using UnityEngine.UI;
@@ -213,6 +214,7 @@ namespace MatchMeow_GameAssets.Scripts.Game.UI.UICanvas.CatUI
             //     }
             // }
 
+            // this.ClosePopup().Forget();
             UIManager.Instance.CloseUI<CatPopUpUI>();
         }
 

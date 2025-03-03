@@ -9,6 +9,8 @@ public class PlayerInventoryManager : Singleton<PlayerInventoryManager>
 
     [SerializeField] private List<ShopItemData> itemDatabases;
 
+    public List<ShopItemData> ItemDatabases => itemDatabases;
+
     private void Awake()
     {
         InitializeInventory();

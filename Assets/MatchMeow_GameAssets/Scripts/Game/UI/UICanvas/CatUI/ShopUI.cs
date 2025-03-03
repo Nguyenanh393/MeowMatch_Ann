@@ -3,22 +3,21 @@ using UnityEngine;
 using System.Collections.Generic;
 using _Pool.Pool;
 using MatchMeow_GameAssets.Scripts.Game.UI.UIButtons.ButtonShopUI;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class ShopUI : PopUpUI
 {
     [SerializeField] private Transform itemsContainer;
     [SerializeField] private Transform sideBarItemsContainer;
-    [SerializeField] private ButtonShopItem itemButtonPrefab;
-    [SerializeField] private ButtonSideBar sideBarButtonPrefab;
     [SerializeField] private List<ShopItemData> shopItemDatabases;
 
     [SerializeField] private Text coinText;
     [SerializeField] private Text heartText;
 
     private Dictionary<ShopItemType, List<ButtonShopItem>> _itemButtons = new Dictionary<ShopItemType, List<ButtonShopItem>>();
-    private Dictionary<ShopItemType, ButtonSideBar> _sidebarButtons = new Dictionary<ShopItemType, ButtonSideBar>();
-    private ButtonSideBar _currentSelectedSidebar;
+    private Dictionary<ShopItemType, ButtonShopSideBar> _sidebarButtons = new Dictionary<ShopItemType, ButtonShopSideBar>();
+    private ButtonShopSideBar _currentSelectedSidebar;
     private HashSet<ShopItemType> _availableItemTypes = new HashSet<ShopItemType>();
 
     public void Awake()
@@ -69,11 +68,11 @@ public class ShopUI : PopUpUI
         // Create sidebar buttons for each unique item type
         foreach (ShopItemType itemType in _availableItemTypes)
         {
-            ButtonSideBar sidebarButton = SimplePool.Spawn<ButtonSideBar>(sideBarButtonPrefab, sideBarItemsContainer);
-            sidebarButton.ItemType = itemType;
-            sidebarButton.gameObject.name = itemType.ToString(); // Rename GameObject
-            sidebarButton.ButtonNameText.text = itemType.ToString(); // Set the button text
-            _sidebarButtons[itemType] = sidebarButton;
+            ButtonShopSideBar sidebarButtonShop = SimplePool.Spawn<ButtonShopSideBar>(PoolType.POOLTYPE_BUTTON_ITEMSHOP_SIDEBAR, sideBarItemsContainer);
+            sidebarButtonShop.ItemType = itemType;
+            sidebarButtonShop.gameObject.name = itemType.ToString(); // Rename GameObject
+            sidebarButtonShop.ButtonNameText.text = itemType.ToString(); // Set the button text
+            _sidebarButtons[itemType] = sidebarButtonShop;
         }
 
     }
@@ -99,7 +98,7 @@ public class ShopUI : PopUpUI
             for (int i = 0; i < database.items.Count; i++)
             {
                 ShopItem item = database.items[i];
-                ButtonShopItem buttonItem = SimplePool.Spawn<ButtonShopItem>(itemButtonPrefab, itemsContainer);
+                ButtonShopItem buttonItem = SimplePool.Spawn<ButtonShopItem>(PoolType.POOLTYPE_BUTTON_ITEMSHOP, itemsContainer);
                 buttonItem.Initialize(item, i);
                 buttonItem.gameObject.SetActive(false); // Hide initially
 
@@ -115,12 +114,12 @@ public class ShopUI : PopUpUI
         }
     }
 
-    public void OnClickButtonSideBar(ButtonSideBar buttonSideBar)
+    public void OnClickButtonSideBar(ButtonShopSideBar buttonShopSideBar)
     {
-        SelectSidebar(buttonSideBar);
+        SelectSidebar(buttonShopSideBar);
     }
 
-    private void SelectSidebar(ButtonSideBar buttonSideBar)
+    private void SelectSidebar(ButtonShopSideBar buttonShopSideBar)
     {
         // Reset previous selection
         if (_currentSelectedSidebar != null)
@@ -129,11 +128,11 @@ public class ShopUI : PopUpUI
         }
 
         // Set new selection
-        _currentSelectedSidebar = buttonSideBar;
-        buttonSideBar.ButtonImage.color = buttonSideBar.SelectedColor;
+        _currentSelectedSidebar = buttonShopSideBar;
+        buttonShopSideBar.ButtonImage.color = buttonShopSideBar.SelectedColor;
 
         // Show only items of selected type
-        ShowItemsByType(buttonSideBar.ItemType);
+        ShowItemsByType(buttonShopSideBar.ItemType);
     }
 
     private void ShowItemsByType(ShopItemType selectedType)

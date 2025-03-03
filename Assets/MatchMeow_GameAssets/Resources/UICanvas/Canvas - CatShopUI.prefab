@@ -471,6 +471,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c1c2762c2ec97484fbcd7a974b1780df, type: 2}
   - {fileID: 11400000, guid: 23b651b9ec4362645b7f2fdc260a2f6f, type: 2}
   - {fileID: 11400000, guid: 3a8aff9822723cd48921e7710cd40598, type: 2}
+  - {fileID: 11400000, guid: b6c2d091de31f3f4f9a049d491cc8d90, type: 2}
   coinText: {fileID: 8049280541678358174}
   heartText: {fileID: 52838721075168287}
 --- !u!1 &3196621495031915067

@@ -289,7 +289,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c969a71e3899d034cb8b27a15a627dda, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5fd8590443e5c31439e6124a7732c09f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -861,6 +861,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acf826bde3614a679b51f5885b8edf3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemType: 6
+  buttonImage: {fileID: 2612145411098615072}
 --- !u!1 &1702610838934430094
 GameObject:
   m_ObjectHideFlags: 0
@@ -1061,6 +1063,12 @@ MonoBehaviour:
   IsDestroyOnClose: 0
   coinText: {fileID: 444049365958707879}
   heartText: {fileID: 1038794832349097790}
+  catHatImage: {fileID: 2516988201961130108}
+  catNecklaceImage: {fileID: 1134292537356256521}
+  catBedImage: {fileID: 2612145411098615072}
+  catLitterBoxImage: {fileID: 0}
+  catFoodBowlImage: {fileID: 0}
+  catBedDefaultImage: {fileID: 21300000, guid: 94b4758c7498a114d9249df73317bd5a, type: 3}
 --- !u!1 &2696131303620521230
 GameObject:
   m_ObjectHideFlags: 0
@@ -1746,7 +1754,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 63c2a64b34f1d9341929656e4058ba31, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 286b1f5dc8068d145a9778e57ef041fa, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

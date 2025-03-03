@@ -270,6 +270,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c1c2762c2ec97484fbcd7a974b1780df, type: 2}
   - {fileID: 11400000, guid: 23b651b9ec4362645b7f2fdc260a2f6f, type: 2}
   - {fileID: 11400000, guid: 3a8aff9822723cd48921e7710cd40598, type: 2}
+  - {fileID: 11400000, guid: b6c2d091de31f3f4f9a049d491cc8d90, type: 2}
 --- !u!1 &3464144813374875947
 GameObject:
   m_ObjectHideFlags: 0
@@ -885,13 +886,14 @@ GameObject:
   - component: {fileID: 341307131606998183}
   - component: {fileID: 9078727962480821101}
   - component: {fileID: 8126706774675733850}
+  - component: {fileID: 282562221989387704}
   m_Layer: 5
   m_Name: Button - X
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7158340846718749435
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1005,6 +1007,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &282562221989387704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6854992643351927198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19d0bde596b04554a088a8782af557ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7404980022529578362
 GameObject:
   m_ObjectHideFlags: 0
@@ -1356,6 +1370,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4414756277795401053, guid: 068c8ea64ea90cd418feba8be83a8ea5, type: 3}
+      propertyPath: _onStart.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 282562221989387704}
+    - target: {fileID: 4414756277795401053, guid: 068c8ea64ea90cd418feba8be83a8ea5, type: 3}
       propertyPath: _onStart.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -1363,6 +1381,10 @@ PrefabInstance:
       propertyPath: _onStart.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnSoundOn
       objectReference: {fileID: 0}
+    - target: {fileID: 4414756277795401053, guid: 068c8ea64ea90cd418feba8be83a8ea5, type: 3}
+      propertyPath: _onLastParticleFinish.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 282562221989387704}
     - target: {fileID: 4414756277795401053, guid: 068c8ea64ea90cd418feba8be83a8ea5, type: 3}
       propertyPath: _onStart.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: ButtonBase, Assembly-CSharp
@@ -1381,7 +1403,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4414756277795401055, guid: 068c8ea64ea90cd418feba8be83a8ea5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1502,7 +1524,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4414756277795401053, guid: 068c8ea64ea90cd418feba8be83a8ea5, type: 3}
       propertyPath: _bursts.Array.data[0].used
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4414756277795401053, guid: 068c8ea64ea90cd418feba8be83a8ea5, type: 3}
       propertyPath: _onStart.m_PersistentCalls.m_Calls.Array.size

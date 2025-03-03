@@ -2,9 +2,9 @@ using _Pool.Pool;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace MatchMeow_GameAssets.Scripts.Game.UI.UIButtons.ButtonShopUI
+namespace MatchMeow_GameAssets.Scripts.Game.UI.UIButtons.ButtonBase
 {
-    public class ButtonSideBar : PoolUnit
+    public class ButtonBaseSideBar : PoolUnit
     {
         [SerializeField] private Image buttonImage;
         [SerializeField] private Color normalColor;
@@ -24,9 +24,6 @@ namespace MatchMeow_GameAssets.Scripts.Game.UI.UIButtons.ButtonShopUI
         public Color SelectedColor => selectedColor;
         public Text ButtonNameText => buttonNameText;
 
-        public void OnClick()
-        {
-            UIManager.Instance.GetUI<ShopUI>().OnClickButtonSideBar(this);
-        }
+
     }
 }

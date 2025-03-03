@@ -98,6 +98,10 @@ public class CleanLitterBoxUI : PopUpUI
 
     private void OnAllCatLittersCleaned()
     {
+        // Set cooldown for next cleaning
+        CooldownManager.Instance.SetLitterBoxCooldown();
+
+        // Show reward UI
         UIManager.Instance.OpenUI<CatRegardUI>();
     }
 

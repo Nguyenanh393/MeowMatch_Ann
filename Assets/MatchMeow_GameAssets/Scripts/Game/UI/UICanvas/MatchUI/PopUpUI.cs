@@ -1,4 +1,5 @@
 using System;
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
 
@@ -18,16 +19,15 @@ public class PopUpUI : UICanvas
             .SetEase(Ease.OutBack); // Hiệu ứng mượt
     }
 
-    // public void ClosePopup()
-    // {
-    //     // Hiệu ứng scale từ 1 → 0 và tắt UI sau khi thu nhỏ
-    //     transform.DOScale(_hiddenScale, animationDuration)
-    //         .SetEase(Ease.InBack)
-    //         .OnComplete(() => gameObject.SetActive(false));
-    // }
+    public async UniTask ClosePopup()
+    {
+        // Hiệu ứng scale từ 1 → 0 và tắt UI sau khi thu nhỏ
+        transform.DOScale(_hiddenScale, animationDuration)
+            .SetEase(Ease.InBack);
+        await UniTask.Delay(TimeSpan.FromSeconds(animationDuration));
+    }
     // private void OnDisable()
     // {
-    //     transform.localScale = _visibleScale;
-    //     transform.DOScale(_visibleScale, animationDuration).SetEase(Ease.OutBack);
+    //     ClosePopup().Forget();
     // }
 }
