@@ -1066,8 +1066,10 @@ MonoBehaviour:
   catHatImage: {fileID: 2516988201961130108}
   catNecklaceImage: {fileID: 1134292537356256521}
   catBedImage: {fileID: 2612145411098615072}
-  catLitterBoxImage: {fileID: 0}
-  catFoodBowlImage: {fileID: 0}
+  catLitterBoxImage: {fileID: 2863102785600925949}
+  catFoodBowlImage: {fileID: 1216820022162332988}
+  catBodyBowlImage: {fileID: 4665828068250522596}
+  catBodyBowlDefaultImage: {fileID: 21300000, guid: 2e8d883d619cb174dab1849e1f109167, type: 3}
   catBedDefaultImage: {fileID: 21300000, guid: 94b4758c7498a114d9249df73317bd5a, type: 3}
 --- !u!1 &2696131303620521230
 GameObject:
@@ -1215,8 +1217,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90efc6cce76c4954bd8b616b2bb1e3ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 0
-  buttonImage: {fileID: 1216820022162332988}
 --- !u!1 &3265169435317810745
 GameObject:
   m_ObjectHideFlags: 0

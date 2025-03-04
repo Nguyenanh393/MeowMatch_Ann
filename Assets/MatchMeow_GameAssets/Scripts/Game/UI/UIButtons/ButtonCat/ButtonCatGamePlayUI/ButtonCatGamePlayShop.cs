@@ -10,7 +10,7 @@ public class ButtonCatGamePlayShop : ButtonBase
 
         UIManager.Instance.CloseUI<CatGamePlayUI>();
         UIManager.Instance.OpenUI<LoadingUI>();
-        UIManager.Instance.CloseUI<LoadingUI>(2f);
+        UIManager.Instance.CloseUI<LoadingUI>(2.1f);
 
         await UniTask.Delay(TimeSpan.FromSeconds(2));
         // LevelManager.Instance.ReloadLevel();
@@ -21,6 +21,7 @@ public class ButtonCatGamePlayShop : ButtonBase
     private void DoWhenClicked()
     {
         UIManager.Instance.OpenUI<ShopUI>();
+
     }
 }
 

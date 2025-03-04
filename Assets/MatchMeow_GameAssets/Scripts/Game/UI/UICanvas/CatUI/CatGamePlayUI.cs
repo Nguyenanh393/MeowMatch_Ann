@@ -12,8 +12,13 @@ public class CatGamePlayUI : UICanvas
     [SerializeField] private Image catBedImage;
     [SerializeField] private Image catLitterBoxImage;
     [SerializeField] private Image catFoodBowlImage;
+    [SerializeField] private Image catBodyBowlImage;
 
+    [SerializeField] private Sprite catBodyBowlDefaultImage;
     [SerializeField] private Sprite catBedDefaultImage;
+
+    // [SerializeField] private ButtonBase catFoodBowlButton;
+    // [SerializeField] private ButtonBase catBodyBowlButton;
 
     private void OnEnable()
     {
@@ -69,5 +74,19 @@ public class CatGamePlayUI : UICanvas
                 }
             }
         }
+    }
+
+    public Image GetObjectImage(ShopItemType itemType)
+    {
+        return itemType switch
+        {
+            ShopItemType.HAT => catHatImage,
+            ShopItemType.NECKLACE => catNecklaceImage,
+            ShopItemType.BED => catBedImage,
+            ShopItemType.LITTER_BOX => catLitterBoxImage,
+            ShopItemType.FOOD => catFoodBowlImage,
+            ShopItemType.BOWL => catBodyBowlImage,
+            _ => null
+        };
     }
 }

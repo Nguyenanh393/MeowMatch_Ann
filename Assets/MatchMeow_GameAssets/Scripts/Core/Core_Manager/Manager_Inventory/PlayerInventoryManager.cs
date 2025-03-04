@@ -122,6 +122,10 @@ public class PlayerInventoryManager : Singleton<PlayerInventoryManager>
             if (isConsumable)
             {
                 itemQuantities[itemType][itemIndex]--;
+                if (itemType == ShopItemType.FOOD)
+                {
+                    CooldownManager.Instance.SetFeedingCooldown();
+                }
                 SaveInventory();
                 return;
             }

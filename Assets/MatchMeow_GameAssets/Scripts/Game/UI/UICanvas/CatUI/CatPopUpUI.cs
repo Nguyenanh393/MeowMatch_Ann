@@ -15,6 +15,7 @@ namespace MatchMeow_GameAssets.Scripts.Game.UI.UICanvas.CatUI
         [SerializeField] private Button nextButton;
         [SerializeField] private Button prevButton;
         [SerializeField] private Button equipButton;
+        [SerializeField] private Text equipButtonText;
         [SerializeField] private List<ShopItemData> shopItemDatabases;
 
         private ShopItemType _itemType;
@@ -179,7 +180,7 @@ namespace MatchMeow_GameAssets.Scripts.Game.UI.UICanvas.CatUI
             if (equipButton != null)
             {
                 bool isEquipped = PlayerInventoryManager.Instance.IsItemEquipped(_itemType, itemIndex);
-                equipButton.GetComponentInChildren<Text>().text = isEquipped ? "Equipped" : "Equip";
+                equipButtonText.text = isEquipped ? "Equipped" : "Equip";
                 equipButton.gameObject.SetActive(true);
                 equipButton.interactable = !isEquipped;
 
@@ -203,16 +204,6 @@ namespace MatchMeow_GameAssets.Scripts.Game.UI.UICanvas.CatUI
             {
                 _baseButton.SetImage(currentItem.icon);
             }
-
-            // Find and update all buttons of this item type in the scene
-            // ButtonBaseItemtype[] allItemTypeButtons = FindObjectsOfType<ButtonBaseItemtype>();
-            // foreach (var button in allItemTypeButtons)
-            // {
-            //     if (button.ItemType == _itemType)
-            //     {
-            //         button.SetImage(currentItem.icon);
-            //     }
-            // }
 
             // this.ClosePopup().Forget();
             UIManager.Instance.CloseUI<CatPopUpUI>();

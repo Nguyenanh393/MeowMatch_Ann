@@ -13,7 +13,14 @@ public class ButtonBaseItemtype : ButtonBase
 
     public void SetImage(Sprite itemIcon)
     {
-        buttonImage.sprite = itemIcon;
+        if (buttonImage != null)
+        {
+            buttonImage.sprite = itemIcon;
+        }
+        else
+        {
+            UIManager.Instance.GetUI<CatGamePlayUI>().GetObjectImage(itemType).sprite = itemIcon;
+        }
     }
     protected override async UniTask OnClickUniTask()
     {
@@ -24,7 +31,7 @@ public class ButtonBaseItemtype : ButtonBase
 
     }
 
-    private void DoWhenClicked()
+    protected virtual void DoWhenClicked()
     {
         UIManager.Instance.OpenUI<CatPopUpUI>();
 

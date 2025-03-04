@@ -18,6 +18,7 @@ public class ButtonSideBarDressUp : ButtonBaseSideBar
 
     public void OnClick()
     {
+        SoundManager.Instance.PlayButtonSound();
         UIManager.Instance.GetUI<CatDressupUI>().OnClickSidebarButton(this);
     }
 }

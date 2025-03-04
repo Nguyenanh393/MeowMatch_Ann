@@ -63,5 +63,6 @@ public class SoundManager :Singleton<SoundManager>
     {
         return _isSoundOn;
     }
+
 }
 

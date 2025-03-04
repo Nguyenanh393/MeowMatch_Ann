@@ -16,7 +16,6 @@ public class ButtonShopItem : PoolUnit
     [SerializeField] private Sprite heartImage;
 
     private ShopItem _item;
-    private ButtonEquip _equipButton;
     private int _itemIndex;
 
     public void Initialize(ShopItem item, int itemIndex)
@@ -67,6 +66,7 @@ public class ButtonShopItem : PoolUnit
 
     public void OnClickUniTask()
     {
+        SoundManager.Instance.PlayButtonSound();
         // Check if player has enough currency before attempting purchase
         bool hasEnoughCurrency = _item.isCoinCurrency ?
             PlayerCurrencyManager.Instance.HasEnoughCoins(_item.price) :

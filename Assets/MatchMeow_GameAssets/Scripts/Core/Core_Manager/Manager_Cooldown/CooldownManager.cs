@@ -5,7 +5,7 @@ using MyUtils;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CooldownManager : MonoBehaviour
+public class CooldownManager : Singleton<CooldownManager>
 {
     [SerializeField] private GameObject cooldownPanel;
     [SerializeField] private Text cooldownText;
@@ -16,22 +16,7 @@ public class CooldownManager : MonoBehaviour
 
     // PlayerPrefs keys
     public const string LITTER_BOX_KEY = "NextLitterBoxTime";
-    private const string FEEDING_BOWL_KEY = "NextFeedingTime";
-
-    public static CooldownManager Instance { get; private set; }
-
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
+    public const string FEEDING_BOWL_KEY = "NextFeedingTime";
 
     public void SetNextAvailableTime(string key, int cooldownSeconds)
     {

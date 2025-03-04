@@ -28,11 +28,13 @@ public class ButtonItemDressup : PoolUnit
 
     public void SetPreviewAction()
     {
+        SoundManager.Instance.PlayButtonSound();
         UIManager.Instance.GetUI<CatDressupUI>().PreviewItem(_localIndex, _item);
     }
 
     public void SetEquipAction()
     {
+        SoundManager.Instance.PlayButtonSound();
         UIManager.Instance.GetUI<CatDressupUI>().EquipItem(_databaseIndex);
     }
 
