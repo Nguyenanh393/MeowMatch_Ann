@@ -53,8 +53,8 @@ public class PlayerCurrencyManager : Singleton<PlayerCurrencyManager>
 
     private void LoadCurrency()
     {
-        _coins = PlayerPrefs.GetInt(Constance.PlayerPref.COIN_VALUE, 0);
-        _hearts = PlayerPrefs.GetInt(Constance.PlayerPref.HEART_VALUE, 0);
+        _coins = PlayerPrefs.GetInt(Constance.PlayerPref.COIN_VALUE, 10000);
+        _hearts = PlayerPrefs.GetInt(Constance.PlayerPref.HEART_VALUE, 10000);
     }
 
     private void SaveCurrency()
@@ -63,12 +63,4 @@ public class PlayerCurrencyManager : Singleton<PlayerCurrencyManager>
         PlayerPrefs.SetInt(Constance.PlayerPref.HEART_VALUE, _hearts);
         PlayerPrefs.Save();
     }
-
-    // public void UpdateRegardValueCoin(int regardValue)
-    // {
-    //     int currentCoinsValue = PlayerPrefs.GetInt(Constance.PlayerPref.COIN_VALUE, 0);
-    //     int updatedLevelCoin = currentCoinsValue + regardValue;
-    //     PlayerPrefs.SetInt(Constance.PlayerPref.COIN_VALUE, updatedLevelCoin);
-    //     Debug.Log("Update Player Coin Complete" + updatedLevelCoin);
-    // }
 }

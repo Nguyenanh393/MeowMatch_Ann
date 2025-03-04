@@ -104,9 +104,9 @@ public class CooldownManager : Singleton<CooldownManager>
         cooldownPanel.SetActive(false);
     }
 
-    private void HideCooldownPanel()
-    {
-        if (cooldownPanel != null)
-            cooldownPanel.SetActive(false);
-    }
+    // private void HideCooldownPanel()
+    // {
+    //     if (cooldownPanel != null)
+    //         cooldownPanel.SetActive(false);
+    // }
 }
