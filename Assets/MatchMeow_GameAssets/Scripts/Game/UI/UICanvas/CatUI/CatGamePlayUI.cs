@@ -56,12 +56,12 @@ public class CatGamePlayUI : UICanvas
         catBodyLitterBoxImage.sprite = catLitterBoxDefaultImage;
         // Check for equipped hat
         UpdateEquippedItemOfType(ShopItemType.HAT, catHatImage);
-
         // Check for equipped necklace
         UpdateEquippedItemOfType(ShopItemType.NECKLACE, catNecklaceImage);
         UpdateEquippedItemOfType(ShopItemType.BED, catBedImage);
         UpdateEquippedItemOfType(ShopItemType.BOWL, catBodyBowlImage);
         UpdateEquippedItemOfType(ShopItemType.LITTER_BOX, catLitterBoxImage);
+        UpdateEquippedItemOfType(ShopItemType.FOOD, catFoodBowlImage);
     }
 
     private void UpdateEquippedItemOfType(ShopItemType itemType, Image targetImage)
