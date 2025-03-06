@@ -13,12 +13,12 @@ public class CatGamePlayUI : UICanvas
     [SerializeField] private Image catLitterBoxImage;
     [SerializeField] private Image catFoodBowlImage;
     [SerializeField] private Image catBodyBowlImage;
+    [SerializeField] private Image catBodyLitterBoxImage;
 
     [SerializeField] private Sprite catBodyBowlDefaultImage;
     [SerializeField] private Sprite catBedDefaultImage;
+    [SerializeField] private Sprite catLitterBoxDefaultImage;
 
-    // [SerializeField] private ButtonBase catFoodBowlButton;
-    // [SerializeField] private ButtonBase catBodyBowlButton;
 
     private void OnEnable()
     {
@@ -46,15 +46,22 @@ public class CatGamePlayUI : UICanvas
         catHatImage.enabled = false;
         catNecklaceImage.sprite = null;
         catNecklaceImage.enabled = false;
+        catFoodBowlImage.sprite = null;
+        catFoodBowlImage.enabled = false;
+
         catBedImage.sprite = catBedDefaultImage;
         // catBedImage.enabled = false;
-
+        catBodyBowlImage.sprite = catBodyBowlDefaultImage;
+        // catBodyBowlImage.enabled = false;
+        catBodyLitterBoxImage.sprite = catLitterBoxDefaultImage;
         // Check for equipped hat
         UpdateEquippedItemOfType(ShopItemType.HAT, catHatImage);
 
         // Check for equipped necklace
         UpdateEquippedItemOfType(ShopItemType.NECKLACE, catNecklaceImage);
         UpdateEquippedItemOfType(ShopItemType.BED, catBedImage);
+        UpdateEquippedItemOfType(ShopItemType.BOWL, catBodyBowlImage);
+        UpdateEquippedItemOfType(ShopItemType.LITTER_BOX, catLitterBoxImage);
     }
 
     private void UpdateEquippedItemOfType(ShopItemType itemType, Image targetImage)

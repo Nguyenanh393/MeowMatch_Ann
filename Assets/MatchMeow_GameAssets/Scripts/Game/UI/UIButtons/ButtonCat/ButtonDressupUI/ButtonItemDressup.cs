@@ -9,6 +9,7 @@ public class ButtonItemDressup : PoolUnit
     [SerializeField] private Button previewButton;
     [SerializeField] private Button equipButton;
     [SerializeField] private GameObject equippedIndicator;
+    [SerializeField] private Text nameText;
 
     private ShopItem _item;
     private int _localIndex;
@@ -24,6 +25,7 @@ public class ButtonItemDressup : PoolUnit
         _itemType = itemType;
 
         itemImage.sprite = item.icon;
+        nameText.text = item.displayName;
     }
 
     public void SetPreviewAction()

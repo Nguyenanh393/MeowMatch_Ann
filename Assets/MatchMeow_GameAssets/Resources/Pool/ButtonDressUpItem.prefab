@@ -520,6 +520,7 @@ MonoBehaviour:
   previewButton: {fileID: 5541543217811579763}
   equipButton: {fileID: 944254909708443037}
   equippedIndicator: {fileID: 2482684710869489977}
+  nameText: {fileID: 5739776738312761687}
 --- !u!1 &8230474059676540944
 GameObject:
   m_ObjectHideFlags: 0

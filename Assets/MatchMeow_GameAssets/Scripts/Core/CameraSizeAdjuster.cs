@@ -8,6 +8,7 @@ public class CameraSizeAdjuster : MonoBehaviour
     private Camera mainCamera;
     private bool isInitialized = false;
 
+    public float plusSize = 100;
     private void Start()
     {
         mainCamera = Camera.main;
@@ -24,11 +25,18 @@ public class CameraSizeAdjuster : MonoBehaviour
         float targetAspect = defaultWidth / defaultHeight;
 
         // Điều chỉnh size dựa trên tỷ lệ
-        float newOrthographicSize = 5 / (screenAspect / targetAspect);
+        float newOrthographicSize = 5 / (screenAspect / targetAspect) + plusSize;
         mainCamera.orthographicSize = newOrthographicSize;
 
         isInitialized = true; // Đánh dấu là đã khởi tạo xong
         Debug.Log($"Camera size adjusted to: {newOrthographicSize} based on screen width {Screen.width} and height {Screen.height}");
+
+
+        // float ratio = 1f * Screen.width / Screen.height;
+        //
+        // float realWidth = cameraLockWidth * 0.5f / ratio;
+        // mainCamera.orthographicSize = realWidth;
+
     }
 
     private void OnValidate()

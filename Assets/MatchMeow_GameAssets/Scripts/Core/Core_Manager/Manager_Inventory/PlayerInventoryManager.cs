@@ -125,6 +125,7 @@ public class PlayerInventoryManager : Singleton<PlayerInventoryManager>
                 if (itemType == ShopItemType.FOOD)
                 {
                     CooldownManager.Instance.SetFeedingCooldown();
+                    UIManager.Instance.OpenUI<CatRegardUI>();
                 }
                 SaveInventory();
                 return;
